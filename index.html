@@ -509,7 +509,71 @@
     }
 
     /* =========================================================
-       9. FINAL & REPRODUCTOR DE MÚSICA (10)
+       NUEVAS SECCIONES INTERACTIVAS (RAZONES, OXAPAMPA Y VALES)
+       ========================================================= */
+    .reasons-box {
+      text-align: center;
+      padding: 35px 25px;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(10, 92, 54, 0.05));
+      border-radius: 20px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .reason-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--jade-primary);
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 20px 0;
+      font-style: italic;
+      transition: opacity 0.3s ease;
+    }
+
+    .oxapampa-card {
+      text-align: center;
+      border: 1px solid rgba(10, 92, 54, 0.2);
+      background: rgba(255, 255, 255, 0.9);
+      padding: 35px 25px;
+    }
+
+    .coupons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .coupon-card {
+      background: var(--white);
+      border: 2px dashed var(--jade-medium);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .coupon-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      border-color: var(--gold-accent);
+      box-shadow: 0 8px 20px rgba(10, 92, 54, 0.1);
+    }
+
+    .coupon-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .coupon-title {
+      font-weight: 600;
+      color: var(--jade-primary);
+      margin-bottom: 5px;
+    }
+
+    /* =========================================================
+       9. FINAL & REPRODUCTOR DE MÚSICA
        ========================================================= */
     .footer-section {
       text-align: center;
@@ -632,7 +696,6 @@
          2. ENCABEZADO PRINCIPAL
          ========================================================= -->
     <header class="hero section">
-      <!-- CONFIGURACIÓN: CAMBIAR NOMBRES SI LO DESEAS -->
       <h1 class="hero-title">Felices 6 meses, mi amor 💚</h1>
       <p class="hero-subtitle">Desde aquel día 14 comenzó nuestra historia...</p>
       <div class="floating-hearts">💚 🌿 🌙</div>
@@ -694,7 +757,6 @@ Gracias por llegar a mi vida.
 
 Te amo muchísimo. 💚
         </div>
-        <!-- CONFIGURACIÓN: CAMBIAR TU NOMBRE O FIRMA -->
         <div class="letter-signature">Siempre tuyo ✍️</div>
       </div>
     </section>
@@ -705,8 +767,6 @@ Te amo muchísimo. 💚
     <section class="reveal">
       <h2 class="section-title">Nuestros Recuerdos 📸</h2>
       <div class="gallery-grid">
-        
-        <!-- CONFIGURACIÓN DE FOTOS: Reemplaza "foto1.jpg", "foto2.jpg", etc. por tus imágenes -->
         <div class="polaroid" onclick="openModal('foto1.jpg', 'Nuestro viaje a Oxapampa 🌿')">
           <img src="foto1.jpg" alt="Oxapampa" onerror="this.src='https://images.unsplash.com/photo-1518173946687-a4c8a383392e?w=500&auto=format&fit=crop'">
           <div class="polaroid-caption">
@@ -754,7 +814,6 @@ Te amo muchísimo. 💚
             <div class="polaroid-sub">Por miles de momentos más</div>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -764,8 +823,6 @@ Te amo muchísimo. 💚
     <section class="reveal">
       <h2 class="section-title">Nuestra Pequeña Historia 💚</h2>
       <div class="timeline">
-
-        <!-- CONFIGURACIÓN: Puedes editar fechas o textos de los hitos -->
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
@@ -797,19 +854,75 @@ Te amo muchísimo. 💚
             <p>Y aquí estamos, escribiendo otro capítulo maravilloso.</p>
           </div>
         </div>
-
       </div>
     </section>
 
     <!-- =========================================================
-         7. SECCIÓN ESPECIAL
+         RAZONES POR LAS QUE TE AMO
+         ========================================================= -->
+    <section class="reveal">
+      <div class="glass-card reasons-box">
+        <h2 class="section-title">Razones por las que te amo 💚</h2>
+        <div class="reason-text" id="reasonDisplay">
+          "Haz clic abajo para descubrir una razón..."
+        </div>
+        <button class="btn-enter" style="padding: 12px 28px; font-size: 0.95rem;" onclick="nextReason()">
+          Ver otra razón 🌿
+        </button>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         DESTACADO OXAPAMPA
+         ========================================================= -->
+    <section class="reveal">
+      <div class="glass-card oxapampa-card">
+        <h2 class="section-title">Nuestro Rincón Especial 🌲</h2>
+        <p style="font-size: 1.1rem; color: var(--jade-primary); font-weight: 600;">Oxapampa, Perú</p>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px;">📍 10°34'38"S 75°24'05"W</p>
+        <p style="font-style: italic; color: var(--text-dark);">
+          "El lugar donde los paisajes eran hermosos, pero lo más bonito siempre fuiste tú."
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         VALES DE AMOR
+         ========================================================= -->
+    <section class="reveal">
+      <h2 class="section-title">Vales Especiales Para Ti 🎟️</h2>
+      <div class="coupons-grid">
+        <div class="coupon-card">
+          <div class="coupon-icon">🍦</div>
+          <div class="coupon-title">Vale por un Helado</div>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Válido para cuando se te antoje algo dulce juntos.</p>
+        </div>
+        <div class="coupon-card">
+          <div class="coupon-icon">🎬</div>
+          <div class="coupon-title">Vale por Elegir Película</div>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Tú eliges qué vemos sin protestar.</p>
+        </div>
+        <div class="coupon-card">
+          <div class="coupon-icon">✈️</div>
+          <div class="coupon-title">Vale por Nuestro Próximo Viaje</div>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Para planear la siguiente aventura juntos.</p>
+        </div>
+        <div class="coupon-card">
+          <div class="coupon-icon">💆‍♂️</div>
+          <div class="coupon-title">Vale por un Masaje</div>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Canjeable en un día cansado.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         7. SECCIÓN ESPECIAL & CARTA OCULTA
          ========================================================= -->
     <section class="reveal">
       <div class="glass-card special-card">
         <p class="special-title">Si pudiera volver al día 14...</p>
         <p class="special-highlight">Volvería a elegirte. 💚</p>
         
-        <!-- 8. BOTÓN Y CARTA OCULTA -->
         <button class="btn-secret" onclick="openSecretLetter()">
           Hay algo más que quiero decirte... 💚
         </button>
@@ -828,7 +941,6 @@ Te amo muchísimo. 💚
   <!-- =========================================================
        MODALES (AMPLIAR FOTO Y CARTA OCULTA)
        ========================================================= -->
-  <!-- Modal Fotos -->
   <div id="imageModal" class="modal" onclick="closeModal()">
     <div class="modal-content" onclick="event.stopPropagation()">
       <span class="modal-close" onclick="closeModal()">&times;</span>
@@ -837,7 +949,6 @@ Te amo muchísimo. 💚
     </div>
   </div>
 
-  <!-- Modal Carta Oculta -->
   <div id="secretModal" class="modal" onclick="closeSecretLetter()">
     <div class="modal-content" onclick="event.stopPropagation()" style="max-width: 500px; text-align: left; padding: 35px;">
       <span class="modal-close" onclick="closeSecretLetter()">&times;</span>
@@ -862,44 +973,36 @@ Te amo muchísimo. 💚
   <!-- =========================================================
        10. REPRODUCTOR DE MÚSICA & BOTÓN SUBIR
        ========================================================= -->
-  <!-- CONFIGURACIÓN AUDIO: Asegúrate de tener tu archivo named "musica.mp3" en GitHub -->
- <audio id="bg-music" loop>
-  <source src="Eres Tú - Matisse, Reik - (Letra).mp3" type="audio/mpeg">
-</audio>
+  <audio id="bg-music" loop>
+    <source src="Eres Tú - Matisse, Reik - (Letra).mp3" type="audio/mpeg">
+  </audio>
 
-<div class="music-player">
-  <button class="btn-music" id="musicBtn" onclick="toggleMusic()">
-    🎵 <span id="musicText">Nuestra canción</span>
-  </button>
-</div>
+  <div class="music-player">
+    <button class="btn-music" id="musicBtn" onclick="toggleMusic()">
+      🎵 <span id="musicText">Nuestra canción</span>
+    </button>
+  </div>
 
-<button class="btn-top" id="btnTop" onclick="scrollToTop()">↑</button>
+  <button class="btn-top" id="btnTop" onclick="scrollToTop()">↑</button>
 
   <!-- =========================================================
        JAVASCRIPT
        ========================================================= -->
   <script>
-    /* =========================================================
-       CONFIGURACIÓN DE LA FECHA DE INICIO
-       Formato: 'YYYY-MM-DDTHH:MM:SS' (Ajusta el año, mes y día)
-       ========================================================= */
-    const START_DATE = new Date('2026-03-14T00:00:00'); // Ejemplo: 14 de Marzo 2026
+    const START_DATE = new Date('2026-03-14T00:00:00');
 
-    // 1. Iniciar Experiencia
     function startExperience() {
       const welcome = document.getElementById('welcome-screen');
       welcome.classList.add('hidden');
       
-      // Intentar reproduccion automatica tras interaccion del usuario
       const audio = document.getElementById('bg-music');
       audio.play().then(() => {
         document.getElementById('musicText').innerText = 'Pausar canción';
       }).catch(() => {
-        // Bloqueado por navegador
+        // Reproducción automática bloqueada por navegador
       });
     }
 
-    // 3. Lógica del Contador
     function updateCounter() {
       const now = new Date();
       const diff = now - START_DATE;
@@ -910,7 +1013,6 @@ Te amo muchísimo. 💚
       const minutes = Math.floor((diff / 1000 / 60) % 60);
       const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
       
-      // Cálculo aproximado de meses y días transcurridos
       const totalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
       const months = Math.floor(totalDays / 30.4375);
       const days = Math.floor(totalDays % 30.4375);
@@ -925,7 +1027,6 @@ Te amo muchísimo. 💚
     setInterval(updateCounter, 1000);
     updateCounter();
 
-    // Partículas flotantes de luz/hojas verdes
     function createParticles() {
       const container = document.getElementById('particles-container');
       const count = 20;
@@ -947,7 +1048,6 @@ Te amo muchísimo. 💚
     }
     createParticles();
 
-    // Modales para Galería
     function openModal(src, caption) {
       document.getElementById('modalImg').src = src;
       document.getElementById('modalCaption').innerText = caption;
@@ -958,7 +1058,6 @@ Te amo muchísimo. 💚
       document.getElementById('imageModal').style.display = 'none';
     }
 
-    // Modal Carta Oculta
     function openSecretLetter() {
       document.getElementById('secretModal').style.display = 'flex';
     }
@@ -967,7 +1066,6 @@ Te amo muchísimo. 💚
       document.getElementById('secretModal').style.display = 'none';
     }
 
-    // Control del Reproductor de Música
     function toggleMusic() {
       const audio = document.getElementById('bg-music');
       const btnText = document.getElementById('musicText');
@@ -981,7 +1079,6 @@ Te amo muchísimo. 💚
       }
     }
 
-    // Revelar elementos al hacer Scroll
     function revealOnScroll() {
       const reveals = document.querySelectorAll('.reveal');
       const windowHeight = window.innerHeight;
@@ -993,7 +1090,6 @@ Te amo muchísimo. 💚
         }
       });
 
-      // Botón Volver Arriba
       const btnTop = document.getElementById('btnTop');
       if (window.scrollY > 400) {
         btnTop.classList.add('visible');
@@ -1007,6 +1103,31 @@ Te amo muchísimo. 💚
 
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* Lista e interacción del Generador de Razones */
+    const reasons = [
+      "Por la forma tan bonita en la que sonríes.",
+      "Por hacer que un viaje a Oxapampa se convierta en el mejor recuerdo de mi vida.",
+      "Por tus abrazos que me hacen sentir en casa.",
+      "Por cómo me escuchas y me apoyas siempre.",
+      "Por la paz que me transmites cuando estoy a tu lado.",
+      "Por ser mi compañera de aventuras favorita.",
+      "Por cada día 14 que celebramos juntos.",
+      "Sencillamente... por ser exactamente tú. 💚"
+    ];
+
+    let reasonIndex = 0;
+
+    function nextReason() {
+      const display = document.getElementById('reasonDisplay');
+      display.style.opacity = '0';
+      
+      setTimeout(() => {
+        display.innerText = `"${reasons[reasonIndex]}"`;
+        display.style.opacity = '1';
+        reasonIndex = (reasonIndex + 1) % reasons.length;
+      }, 300);
     }
   </script>
 </body>
