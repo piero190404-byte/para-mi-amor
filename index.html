@@ -11,9 +11,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* =========================================================
-       VARIABLES Y PALETA DE COLORES (VERDE JADE, CREMA, ORO)
-       ========================================================= */
     :root {
       --jade-primary: #0A5C36;
       --jade-medium: #0F7A47;
@@ -30,7 +27,6 @@
       --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    /* Reset Global */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -49,7 +45,6 @@
       position: relative;
     }
 
-    /* Contenedor de Partículas Flotantes */
     #particles-container {
       position: fixed;
       top: 0;
@@ -82,9 +77,6 @@
       }
     }
 
-    /* =========================================================
-       1. PANTALLA DE BIENVENIDA (SPLASH SCREEN)
-       ========================================================= */
     #welcome-screen {
       position: fixed;
       inset: 0;
@@ -147,9 +139,6 @@
       box-shadow: 0 10px 25px rgba(212, 175, 55, 0.6);
     }
 
-    /* =========================================================
-       ESTILOS GENERALES DE SECCIONES & GLASSMORPHISM
-       ========================================================= */
     main {
       position: relative;
       z-index: 2;
@@ -189,7 +178,6 @@
       margin-top: 5px;
     }
 
-    /* Animaciones al hacer Scroll */
     .reveal {
       opacity: 0;
       transform: translateY(30px);
@@ -201,9 +189,6 @@
       transform: translateY(0);
     }
 
-    /* =========================================================
-       2. ENCABEZADO PRINCIPAL
-       ========================================================= */
     .hero {
       text-align: center;
       padding-top: 100px;
@@ -235,9 +220,6 @@
       50% { transform: scale(1.15); }
     }
 
-    /* =========================================================
-       3. CONTADOR DE TIEMPO
-       ========================================================= */
     .counter-container {
       text-align: center;
       background: linear-gradient(135deg, rgba(10, 92, 54, 0.05), rgba(46, 155, 102, 0.1));
@@ -275,9 +257,6 @@
       margin-top: 5px;
     }
 
-    /* =========================================================
-       4. CARTA DE AMOR
-       ========================================================= */
     .letter-card {
       background: #FFFDF9;
       border-left: 4px solid var(--jade-primary);
@@ -300,9 +279,6 @@
       margin-top: 25px;
     }
 
-    /* =========================================================
-       5. GALERÍA RECUERDOS (POLAROID)
-       ========================================================= */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -349,7 +325,6 @@
       margin-top: 3px;
     }
 
-    /* Modal de Imagen Ampliada */
     .modal {
       display: none;
       position: fixed;
@@ -394,9 +369,6 @@
       cursor: pointer;
     }
 
-    /* =========================================================
-       6. LÍNEA DEL TIEMPO
-       ========================================================= */
     .timeline {
       position: relative;
       max-width: 700px;
@@ -465,9 +437,6 @@
       margin-bottom: 5px;
     }
 
-    /* =========================================================
-       7. SECCIÓN ESPECIAL & 8. CARTA OCULTA
-       ========================================================= */
     .special-card {
       text-align: center;
       background: linear-gradient(135deg, var(--jade-primary), #083D24);
@@ -508,9 +477,6 @@
       box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
     }
 
-    /* =========================================================
-       NUEVAS SECCIONES INTERACTIVAS (RAZONES, OXAPAMPA Y VALES)
-       ========================================================= */
     .reasons-box {
       text-align: center;
       padding: 35px 25px;
@@ -539,6 +505,7 @@
       padding: 35px 25px;
     }
 
+    /* ESTILOS DE VALES DE AMOR REVISADOS */
     .coupons-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -553,12 +520,34 @@
       padding: 20px;
       text-align: center;
       transition: var(--transition);
+      position: relative;
     }
 
     .coupon-card:hover {
       transform: translateY(-5px) scale(1.02);
       border-color: var(--gold-accent);
       box-shadow: 0 8px 20px rgba(10, 92, 54, 0.1);
+    }
+
+    .coupon-card.redeemed {
+      opacity: 0.6;
+      border-style: solid;
+      background: #F0F4F1;
+    }
+
+    .coupon-card.redeemed::after {
+      content: 'CANJEADO ✔';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-12deg);
+      background: var(--jade-primary);
+      color: var(--white);
+      padding: 5px 15px;
+      font-weight: 700;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
     .coupon-icon {
@@ -572,9 +561,23 @@
       margin-bottom: 5px;
     }
 
-    /* =========================================================
-       9. FINAL & REPRODUCTOR DE MÚSICA
-       ========================================================= */
+    .btn-claim {
+      margin-top: 12px;
+      background: var(--jade-primary);
+      color: var(--white);
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-claim:hover {
+      background: var(--jade-medium);
+    }
+
     .footer-section {
       text-align: center;
       padding: 60px 20px 100px 20px;
@@ -586,7 +589,6 @@
       color: var(--jade-primary);
     }
 
-    /* Reproductor de Música Flotante */
     .music-player {
       position: fixed;
       bottom: 25px;
@@ -614,7 +616,6 @@
       transform: scale(1.05);
     }
 
-    /* Botón Volver Arriba */
     .btn-top {
       position: fixed;
       bottom: 25px;
@@ -641,9 +642,6 @@
       pointer-events: auto;
     }
 
-    /* =========================================================
-       12. RESPONSIVE (MÓVILES)
-       ========================================================= */
     @media (max-width: 768px) {
       .hero-title { font-size: 2.2rem; }
       .welcome-title { font-size: 2rem; }
@@ -675,12 +673,8 @@
 </head>
 <body>
 
-  <!-- CONTENEDOR PARA PARTÍCULAS FLOTANTES -->
   <div id="particles-container"></div>
 
-  <!-- =========================================================
-       1. PANTALLA DE BIENVENIDA
-       ========================================================= -->
   <div id="welcome-screen">
     <div class="welcome-content">
       <h1 class="welcome-title">Para el amor de mi vida 💚</h1>
@@ -692,18 +686,12 @@
   </div>
 
   <main>
-    <!-- =========================================================
-         2. ENCABEZADO PRINCIPAL
-         ========================================================= -->
     <header class="hero section">
       <h1 class="hero-title">Felices 6 meses, mi amor 💚</h1>
       <p class="hero-subtitle">Desde aquel día 14 comenzó nuestra historia...</p>
       <div class="floating-hearts">💚 🌿 🌙</div>
     </header>
 
-    <!-- =========================================================
-         3. CONTADOR DE TIEMPO
-         ========================================================= -->
     <section class="reveal">
       <div class="glass-card counter-container">
         <h2 class="section-title">Tiempo Construyendo Recuerdos</h2>
@@ -732,9 +720,6 @@
       </div>
     </section>
 
-    <!-- =========================================================
-         4. CARTA DE AMOR
-         ========================================================= -->
     <section class="reveal">
       <div class="glass-card letter-card">
         <h2 class="section-title">Para ti, mi amor 💚</h2>
@@ -761,9 +746,6 @@ Te amo muchísimo. 💚
       </div>
     </section>
 
-    <!-- =========================================================
-         5. SECCIÓN "NUESTROS RECUERDOS" (GALERÍA)
-         ========================================================= -->
     <section class="reveal">
       <h2 class="section-title">Nuestros Recuerdos 📸</h2>
       <div class="gallery-grid">
@@ -817,9 +799,6 @@ Te amo muchísimo. 💚
       </div>
     </section>
 
-    <!-- =========================================================
-         6. LÍNEA DEL TIEMPO
-         ========================================================= -->
     <section class="reveal">
       <h2 class="section-title">Nuestra Pequeña Historia 💚</h2>
       <div class="timeline">
@@ -857,9 +836,6 @@ Te amo muchísimo. 💚
       </div>
     </section>
 
-    <!-- =========================================================
-         RAZONES POR LAS QUE TE AMO
-         ========================================================= -->
     <section class="reveal">
       <div class="glass-card reasons-box">
         <h2 class="section-title">Razones por las que te amo 💚</h2>
@@ -872,9 +848,6 @@ Te amo muchísimo. 💚
       </div>
     </section>
 
-    <!-- =========================================================
-         DESTACADO OXAPAMPA
-         ========================================================= -->
     <section class="reveal">
       <div class="glass-card oxapampa-card">
         <h2 class="section-title">Nuestro Rincón Especial 🌲</h2>
@@ -886,38 +859,43 @@ Te amo muchísimo. 💚
       </div>
     </section>
 
-    <!-- =========================================================
-         VALES DE AMOR
-         ========================================================= -->
+    <!-- SECCIÓN DE VALES MEJORADA -->
     <section class="reveal">
       <h2 class="section-title">Vales Especiales Para Ti 🎟️</h2>
+      <p style="text-align: center; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
+        Haz clic en el botón de cualquier vale para canjearlo conmigo. 💚
+      </p>
       <div class="coupons-grid">
-        <div class="coupon-card">
+        <div class="coupon-card" id="coupon-1">
           <div class="coupon-icon">🍦</div>
           <div class="coupon-title">Vale por un Helado</div>
           <p style="font-size: 0.85rem; color: var(--text-muted);">Válido para cuando se te antoje algo dulce juntos.</p>
+          <button class="btn-claim" onclick="claimCoupon('coupon-1', 'Vale por un Helado 🍦')">Canjear Vale 💚</button>
         </div>
-        <div class="coupon-card">
+
+        <div class="coupon-card" id="coupon-2">
           <div class="coupon-icon">🎬</div>
           <div class="coupon-title">Vale por Elegir Película</div>
           <p style="font-size: 0.85rem; color: var(--text-muted);">Tú eliges qué vemos sin protestar.</p>
+          <button class="btn-claim" onclick="claimCoupon('coupon-2', 'Vale por Elegir Película 🎬')">Canjear Vale 💚</button>
         </div>
-        <div class="coupon-card">
+
+        <div class="coupon-card" id="coupon-3">
           <div class="coupon-icon">✈️</div>
-          <div class="coupon-title">Vale por Nuestro Próximo Viaje</div>
+          <div class="coupon-title">Próximo Viaje</div>
           <p style="font-size: 0.85rem; color: var(--text-muted);">Para planear la siguiente aventura juntos.</p>
+          <button class="btn-claim" onclick="claimCoupon('coupon-3', 'Vale por el Próximo Viaje ✈️')">Canjear Vale 💚</button>
         </div>
-        <div class="coupon-card">
+
+        <div class="coupon-card" id="coupon-4">
           <div class="coupon-icon">💆‍♂️</div>
           <div class="coupon-title">Vale por un Masaje</div>
           <p style="font-size: 0.85rem; color: var(--text-muted);">Canjeable en un día cansado.</p>
+          <button class="btn-claim" onclick="claimCoupon('coupon-4', 'Vale por un Masaje 💆‍♂️')">Canjear Vale 💚</button>
         </div>
       </div>
     </section>
 
-    <!-- =========================================================
-         7. SECCIÓN ESPECIAL & CARTA OCULTA
-         ========================================================= -->
     <section class="reveal">
       <div class="glass-card special-card">
         <p class="special-title">Si pudiera volver al día 14...</p>
@@ -929,18 +907,13 @@ Te amo muchísimo. 💚
       </div>
     </section>
 
-    <!-- =========================================================
-         9. FINAL DE LA PÁGINA
-         ========================================================= -->
     <section class="footer-section reveal">
       <h2 class="footer-title">Por muchos meses más contigo 💚</h2>
       <p style="color: var(--text-muted); margin-top: 10px;">Esto recién comienza...</p>
     </section>
   </main>
 
-  <!-- =========================================================
-       MODALES (AMPLIAR FOTO Y CARTA OCULTA)
-       ========================================================= -->
+  <!-- MODALES -->
   <div id="imageModal" class="modal" onclick="closeModal()">
     <div class="modal-content" onclick="event.stopPropagation()">
       <span class="modal-close" onclick="closeModal()">&times;</span>
@@ -970,9 +943,28 @@ Te amo muchísimo. 💚
     </div>
   </div>
 
-  <!-- =========================================================
-       10. REPRODUCTOR DE MÚSICA & BOTÓN SUBIR
-       ========================================================= -->
+  <!-- MODAL DE CONFIRMACIÓN DE VALE -->
+  <div id="couponModal" class="modal" onclick="closeCouponModal()">
+    <div class="modal-content" onclick="event.stopPropagation()" style="max-width: 450px; text-align: center; padding: 30px;">
+      <span class="modal-close" onclick="closeCouponModal()">&times;</span>
+      <div style="font-size: 2.5rem; margin-bottom: 10px;">🎟️</div>
+      <h3 style="color: var(--jade-primary); font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 10px;" id="couponModalTitle">
+        ¡Vale Canjeado!
+      </h3>
+      <p style="font-size: 0.95rem; color: var(--text-dark); margin-bottom: 20px;" id="couponModalText">
+        ¿Quieres enviar un mensaje por WhatsApp para reclamarlo ahora mismo?
+      </p>
+      <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+        <button id="whatsappBtn" class="btn-enter" style="padding: 10px 20px; font-size: 0.9rem;" onclick="sendWhatsApp()">
+          Enviarlo por WhatsApp 📱
+        </button>
+        <button class="btn-secret" style="padding: 10px 20px; font-size: 0.9rem; margin-top: 0;" onclick="closeCouponModal()">
+          Guardar aquí 💚
+        </button>
+      </div>
+    </div>
+  </div>
+
   <audio id="bg-music" loop>
     <source src="Eres Tú - Matisse, Reik - (Letra).mp3" type="audio/mpeg">
   </audio>
@@ -985,11 +977,12 @@ Te amo muchísimo. 💚
 
   <button class="btn-top" id="btnTop" onclick="scrollToTop()">↑</button>
 
-  <!-- =========================================================
-       JAVASCRIPT
-       ========================================================= -->
   <script>
     const START_DATE = new Date('2026-03-14T00:00:00');
+    let selectedCouponName = '';
+
+    // INSERTA TU NÚMERO DE TELÉFONO AQUÍ (Ejemplo con código de país Perú +51: '51987654321')
+    const YOUR_PHONE_NUMBER = ''; 
 
     function startExperience() {
       const welcome = document.getElementById('welcome-screen');
@@ -998,9 +991,7 @@ Te amo muchísimo. 💚
       const audio = document.getElementById('bg-music');
       audio.play().then(() => {
         document.getElementById('musicText').innerText = 'Pausar canción';
-      }).catch(() => {
-        // Reproducción automática bloqueada por navegador
-      });
+      }).catch(() => {});
     }
 
     function updateCounter() {
@@ -1066,6 +1057,27 @@ Te amo muchísimo. 💚
       document.getElementById('secretModal').style.display = 'none';
     }
 
+    /* FUNCIONALIDAD DE LOS VALES */
+    function claimCoupon(id, name) {
+      const card = document.getElementById(id);
+      card.classList.add('redeemed');
+      selectedCouponName = name;
+      
+      document.getElementById('couponModalTitle').innerText = `¡Canjeaste: ${name}!`;
+      document.getElementById('couponModal').style.display = 'flex';
+    }
+
+    function closeCouponModal() {
+      document.getElementById('couponModal').style.display = 'none';
+    }
+
+    function sendWhatsApp() {
+      const text = encodeURIComponent(`¡Hola mi amor! 💚 Vengo a canjear mi "${selectedCouponName}" que vi en la página de nuestros 6 meses. ✨`);
+      const phone = YOUR_PHONE_NUMBER ? YOUR_PHONE_NUMBER : '';
+      window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+      closeCouponModal();
+    }
+
     function toggleMusic() {
       const audio = document.getElementById('bg-music');
       const btnText = document.getElementById('musicText');
@@ -1105,7 +1117,6 @@ Te amo muchísimo. 💚
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    /* Lista e interacción del Generador de Razones */
     const reasons = [
       "Por la forma tan bonita en la que sonríes.",
       "Por hacer que un viaje a Oxapampa se convierta en el mejor recuerdo de mi vida.",
