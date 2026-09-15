@@ -982,7 +982,7 @@ Te amo muchísimo. 💚
     let selectedCouponName = '';
 
     // INSERTA TU NÚMERO DE TELÉFONO AQUÍ (Ejemplo con código de país Perú +51: '51987654321')
-    const YOUR_PHONE_NUMBER = '51949349391'; 
+    const YOUR_PHONE_NUMBER = '949349391'; 
 
     function startExperience() {
       const welcome = document.getElementById('welcome-screen');
@@ -1073,7 +1073,7 @@ Te amo muchísimo. 💚
 
     function sendWhatsApp() {
       const text = encodeURIComponent(`¡Hola mi amor! 💚 Vengo a canjear mi "${selectedCouponName}" que vi en la página de nuestros 6 meses. ✨`);
-      const phone = YOUR_PHONE_NUMBER ? YOUR_PHONE_NUMBER : '';
+      const phone = YOUR_PHONE_NUMBER ? YOUR_PHONE_NUMBER : '949349391';
       window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
       closeCouponModal();
     }
